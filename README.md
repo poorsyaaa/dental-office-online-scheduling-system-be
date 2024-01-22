@@ -308,7 +308,6 @@ This API endpoint returns all the booked slots for a specific dentist.
 
 ```http
 GET /api/slots/8c4961fe-7577-49a4-a2c1-56c356f3fbb9
-dentist
 ```
 
 ### Architecture
