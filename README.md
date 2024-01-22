@@ -107,7 +107,7 @@ The request body should be a JSON object containing the following fields:
   "status": "Open",
   "specialNotes": "Patient has a history of allergies."
 }
-
+```
 ### Get Appointment
 
 This API endpoint allows users to retrieve appointment information by specifying the appointment ID as a URL parameter.
@@ -123,7 +123,7 @@ This API endpoint allows users to retrieve appointment information by specifying
 
 ```http
 GET /api/appointments/8c4961fe-7577-49a4-a2c1-56c356f3fbb9
-
+```
 ### Update Appointment
 
 This API endpoint allows users to update their existing appointments.
@@ -150,6 +150,7 @@ The request body should be a JSON object containing the following fields:
   "dentistId": "e388083a-1063-4b53-8561-b93ac572d1fd",
   "specialNotes": "Patient has a history of allergies."
 }
+```
 
 ### Cancel Appointment
 
@@ -174,6 +175,7 @@ The request body should be a JSON object containing the following fields:
   "appointmentId": "8c4961fe-7577-49a4-a2c1-56c356f3fbb9",
   "status": "Cancelled",
 }
+```
 
 ### Get All Appointments
 
@@ -190,6 +192,7 @@ This API endpoint allows users to get all their appointments.
 
 ```http
 GET /api/appointments/user/8c4961fe-7577-49a4-a2c1-56c356f3fbb9
+```
 
 ### User Registration
 
@@ -220,6 +223,7 @@ The request body should be a JSON object containing the following fields:
   "email": "john.doe@example.com",
   "phoneNumber": "123-456-7890"
 }
+```
 
 ### User Login
 
@@ -242,6 +246,7 @@ The request body should be a JSON object containing the following fields:
   "userName": "john_doe",
   "password": "SecureP@ssw0rd",
 }
+```
 
 ### Authenticate user
 
@@ -258,6 +263,7 @@ This API endpoint allows users to login their account.
 
 ```http
 GET /api/auth/8c4961fe-7577-49a4-a2c1-56c356f3fbb9
+```
 
 ### Get All Dentist
 
@@ -285,6 +291,7 @@ This API endpoint returns user details.
 
 ```http
 GET /api/user/8c4961fe-7577-49a4-a2c1-56c356f3fbb9
+```
 
 ### Get List of Available Slots
 
@@ -301,6 +308,8 @@ This API endpoint returns all the booked slots for a specific dentist.
 
 ```http
 GET /api/slots/8c4961fe-7577-49a4-a2c1-56c356f3fbb9
+dentist
+```
 
 ### Architecture
 
