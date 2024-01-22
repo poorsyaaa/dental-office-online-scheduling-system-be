@@ -5,13 +5,17 @@ const createAppointmentSchema = [
   body("appointmentDate").isDate().withMessage("Date must be a valid date"),
   body("serviceType").notEmpty().withMessage("Service Type is required"),
   body("dentistId").notEmpty().withMessage("Dentist ID is required"),
-  body("reason").optional().isString().withMessage("Reason must be a string"),
+  body("status").notEmpty().isString().withMessage("Status must be a string"),
   body("specialNotes").optional().isString().withMessage("Special Notes must be a string"),
 ];
 
 const getAppointmentSchema = [param("appointmentId").notEmpty().withMessage("Appointment ID is required")];
 
-const updateAppointmentSchema = [body("appointmentId").notEmpty().withMessage("Appointment ID is required"), body("appointmentDate").isDate().withMessage("Date must be a valid date")];
+const updateAppointmentSchema = [
+  body("appointmentId").notEmpty().withMessage("Appointment ID is required"), 
+  body("appointmentDate").isDate().withMessage("Date must be a valid date"),
+  body("status").notEmpty().isString().withMessage("Status must be a string"),
+];
 
 const cancelAppointmentSchema = [
   body("userId").notEmpty().withMessage("User ID is required"),
