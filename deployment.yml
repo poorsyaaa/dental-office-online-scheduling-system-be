@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dental-office-online-scheduling-system
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dental-office-online-scheduling-system
+  template:
+    metadata:
+      labels:
+        app: dental-office-online-scheduling-system
+    spec:
+      containers:
+        - name: dental-office-online-scheduling-system
+          image: 905418285985.dkr.ecr.ap-southeast-2.amazonaws.com/my_dental_office_online_scheduling_system:4.0
+          ports:
+            - containerPort: 3000
+          env:
+            - name: AWS_REGION
+              value: ap-southeast-2
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secret
+                  key: AWS_ACCESS_KEY_ID
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secret
+                  key: AWS_SECRET_ACCESS_KEY
+            - name: JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: JWT_SECRET_KEY
+            - name: JWT_REFRESH_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secrets
+                  key: JWT_REFRESH_SECRET_KEY

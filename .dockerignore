@@ -1,0 +1,24 @@
+# Logs
+npm-debug.log
+
+# Node modules
+node_modules/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Docker
+.dockerignore
+
+# Environment Files
+.env
+.envrc
+
+# Editor/OS-specific files
+.vscode/
+.DS_Store
+
+# Misc
+README.md
